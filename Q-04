@@ -1,0 +1,44 @@
+num = int(input("Enter a number: "))
+
+# Check if prime
+if num > 1:
+    is_prime = True
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+else:
+    is_prime = False
+
+# Check if perfect
+sum_of_divisors = 0
+for i in range(1, num):
+    if num % i == 0:
+        sum_of_divisors += i
+is_perfect = sum_of_divisors == num
+
+# Check if Armstrong
+temp = num
+sum_of_digits = 0
+num_digits = len(str(num))
+while temp > 0:
+    digit = temp % 10
+    sum_of_digits += digit ** num_digits
+    temp //= 10
+is_armstrong = sum_of_digits == num
+
+# Check if palindrome
+original = str(num)
+reversed_num = original[::-1]
+is_palindrome = original == reversed_num
+
+# Check if automorphic
+square = num * num
+is_automorphic = str(square).endswith(str(num))
+
+# Print results
+print("Prime Number:", is_prime)
+print("Perfect Number:", is_perfect)
+print("Armstrong Number:", is_armstrong)
+print("Palindrome Number:", is_palindrome)
+print("Automorphic Number:", is_automorphic)

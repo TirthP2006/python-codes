@@ -1,0 +1,13 @@
+import math
+
+def sin_taylor(x, terms=10):
+    sine = 0
+    for n in range(terms):
+        term = ((-1) ** n) * (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
+        sine += term
+    return sine
+
+x_degrees = float(input("Enter angle in degrees: "))
+x_radians = x_degrees * (math.pi / 180)
+
+print(f"sin({x_degrees}°) ≈ {sin_taylor(x_radians)}")
