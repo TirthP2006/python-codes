@@ -1,0 +1,12 @@
+def check_substring(main_str, sub_str):
+    if sub_str in main_str:
+        return "Substring found in the main string!"
+    elif main_str in sub_str:
+        return "Main string found in the substring!"
+    else:
+        return "No match found."
+
+main_string = input("Enter the main string: ")
+sub_string = input("Enter the substring: ")
+
+print(check_substring(main_string, sub_string))
